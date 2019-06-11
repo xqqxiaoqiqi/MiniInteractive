@@ -7,13 +7,15 @@ public class ConvPanel : MonoBehaviour
 {
     private Button convbutton;
     private Text convtext;
+    private Text nametext;
     public float charsPerSecond = 0.2f;
     private float timer;
     private int currentPos = 0;
     void Awake()
     {
         convbutton = GetComponent<Button>();
-        convtext = GetComponentInChildren<Text>();
+        convtext = GetComponentsInChildren<Text>()[0];
+        nametext = GetComponentsInChildren<Text>()[1];
         InstalizePanel();
     }
     private void Update()
@@ -50,6 +52,7 @@ public class ConvPanel : MonoBehaviour
         switch(ConvSet.Instance().paneltype)
         {
             case PanelType.Showing:
+                nametext.text = ConvSet.Instance().currname;
                 if (ConvSet.Instance().paneltype == PanelType.Showing)
                 {
                     timer += Time.deltaTime;
