@@ -18,6 +18,7 @@ public class ConvSet : UnitySingleton<ConvSet>
     public static List<string> ConvName = new List<string>();
     public PanelType paneltype;
     public string currconv;
+    public string currname;
     private int currnum = 0;
     public void GetConvList(string line)
     {
@@ -52,6 +53,7 @@ public class ConvSet : UnitySingleton<ConvSet>
         else
         {
             currconv = Conversation[currnum];
+            currname = ConvName[currnum];
             currnum++;
             ConvSet.Instance().paneltype = PanelType.Ready;
         }
