@@ -9,10 +9,8 @@ public class LevelManager : UnitySingleton<LevelManager>
 {
     private TextAsset ConvAsset;
     private static string ConvPackage = "DataBase/ConvData";
-    private List<string> Conversation = new List<string>();
-    private List<string> ConvName = new List<string>();
     private JsonData cardsJsonData;
-    private string nextscene;
+    public string nextscene;
     private Dictionary<string, JsonData> Data = new Dictionary<string, JsonData>();
     void Awake()
     {
@@ -33,7 +31,7 @@ public class LevelManager : UnitySingleton<LevelManager>
         }
     }
     /// <summary>
-    /// 根据
+    /// 根据获取场景对话文本
     /// </summary>
     /// <param name="nums"></param>
     public void GetConversation(string nums)
@@ -43,15 +41,23 @@ public class LevelManager : UnitySingleton<LevelManager>
         for (int i=0; i<lines.Length;i++)
         {
             Debug.Log(lines[i]);
-            ConvName.Add(lines[i].Split(':').First());
-            Conversation.Add(lines[i].Split(':').Last());
+            ConvSet.Instance().GetConvList(lines[i]);
         }
-        if(Data[nums].ContainsKey("choice"))
+        ConvSet.Instance().UpdateCurrConv();
+        if(Data[nums].ContainsKey("Choice"))
         {
             Debug.Log("Setchoice");
-            SetChoice(Data[nums]["choice"].ToString());
+            SetChoice(Data[nums]["Choice"].ToString());
+        }
+        if(Data[nums].ContainsKey("Next"))
+        {
+            nextscene = Data[nums]["Next"].ToString();
         }
     }
+    /// <summary>
+    /// 设置场景选项文本
+    /// </summary>
+    /// <param name="message"></param>
     private void SetChoice(string message)
     {
         System.StringSplitOptions option = System.StringSplitOptions.RemoveEmptyEntries;

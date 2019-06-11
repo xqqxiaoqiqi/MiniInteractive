@@ -5,16 +5,10 @@ using UnityEngine.UI;
 
 public class ChoicePanel : MonoBehaviour
 {
-    private static bool firstload = true;
     public static Dictionary<Button,string> buttonlist = new Dictionary<Button,string>();
-    private void OnEnable()
+    public void UpDateChoicePanel()
     {
-        if(firstload)
-        {
-            firstload = false;
-        }
-        else
-        {
+
             Button[] b = this.GetComponentsInChildren<Button>();
             for (int i = 0; i < b.Length; i++)
             {
@@ -28,7 +22,5 @@ public class ChoicePanel : MonoBehaviour
                     button.GetComponentInChildren<Text>().text = ChoiceSet.choicestext[i];
                 }
             }
-        }
-
     }
 }

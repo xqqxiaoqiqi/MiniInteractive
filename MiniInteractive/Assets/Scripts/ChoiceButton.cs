@@ -20,6 +20,6 @@ public class ChoiceButton : MonoBehaviour
         {
             LevelManager.Instance().GetConversation(ChoicePanel.buttonlist[thisbutton]);
         }
-        choicepanel.SetActive(false);
+        ChoiceSet.Instance().HideChoicePanel();
     }
 }

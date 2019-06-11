@@ -14,7 +14,7 @@
 		Vilmaris:说起来，你还是第一次担任“守门人”这个职位吧?
 		Vilmaris:守门人的职责，你已经清楚了吗???
 		",	
-        "choice": 
+        "Choice": 
 		"是的=0_2
 		还没有=0_3"
     },
@@ -23,31 +23,28 @@
         "Conversation":"
 		Vilmaris:……你已经提前看过“守门人管理与工作手册”了？
 		Vilmaris:看来，你比我想像的还是要靠谱一点的……
-		"
+		",
+		"Next":"0_4"
     },
     {
         "ID": "0_3",
         "Conversation": "
 		Vilmaris:我想也是。那么，在工作之前，先确认一下放置在桌子上的“守门人管理与工作手册”。
 		Vilmaris:当你已经阅览完毕后，就可以开始工作了。
-		"
+		",
+		"Next":"0_4"
     },
     {
-        "ID": "GCuringwind_1",
-        "ability_id": [
-            "CuringWind_1"
-        ],
-        "cd": 3,
-        "color": "G",
-        "cost": 2,
-        "effect": "所有友方单位获得5点生命。",
-        "flavor_text": "",
-        "name": "治愈之风",
-        "related_token": "",
-        "slot": "",
-        "tag": [],
-        "tokenID": "",
-        "type": "Order"
+        "ID": "0_4",
+        "Conversation":"
+		Vilmaris:那么，我也差不多该回到自己的工作岗位了。
+		Vilmaris:如果发生了什么意外状况，可以使用桌面上的联络装置同我进行联络。
+		Ash:明白了。
+		Vilmaris:……虽然我也不知道在我就在你附近的时候，联络装置到底能起到什么作用。
+		Vilmaris:真正发生了什么意外状况，恐怕还是直接喊我的名字更加便捷一些。
+		",
+		"Stop":"0_4",
+		"Next":"1_1"
     },
     {
         "ID": "GCuringwind_2",
