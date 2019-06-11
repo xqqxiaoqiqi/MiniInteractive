@@ -11,6 +11,8 @@ public class LevelManager : UnitySingleton<LevelManager>
     private static string ConvPackage = "DataBase/ConvData";
     private JsonData cardsJsonData;
     public string nextscene;
+    public bool needstop = false;
+    private string stopnum;
     private Dictionary<string, JsonData> Data = new Dictionary<string, JsonData>();
     void Awake()
     {
@@ -53,6 +55,11 @@ public class LevelManager : UnitySingleton<LevelManager>
         {
             nextscene = Data[nums]["Next"].ToString();
         }
+        if(Data[nums].ContainsKey("Stop"))
+        {
+            needstop = true;
+            stopnum = nums;
+        }
     }
     /// <summary>
     /// 设置场景选项文本
@@ -69,5 +76,15 @@ public class LevelManager : UnitySingleton<LevelManager>
             ChoiceSet.choiceresult.Add(details.Last());
         }
     }
-    
+    public void StopProcess()
+    {
+        switch(stopnum)
+        {
+            case "0_4":
+
+                break;
+            default:
+                break;
+        }
+    }
 }

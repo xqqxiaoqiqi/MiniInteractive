@@ -39,7 +39,14 @@ public class ConvSet : UnitySingleton<ConvSet>
             }
             else
             {
-                LevelManager.Instance().GetConversation(LevelManager.Instance().nextscene);
+                if(LevelManager.Instance().needstop==false)
+                {
+                    LevelManager.Instance().GetConversation(LevelManager.Instance().nextscene);
+                }
+                else
+                {
+                    LevelManager.Instance().StopProcess();
+                }
             }
         }
         else
