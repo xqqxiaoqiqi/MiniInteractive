@@ -8,7 +8,7 @@ public class ChoicePanel : MonoBehaviour
     public static Dictionary<Button,string> buttonlist = new Dictionary<Button,string>();
     public void UpDateChoicePanel()
     {
-
+            buttonlist.Clear();
             Button[] b = this.GetComponentsInChildren<Button>();
             for (int i = 0; i < b.Length; i++)
             {
