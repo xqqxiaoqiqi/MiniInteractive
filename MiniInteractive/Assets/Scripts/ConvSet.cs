@@ -26,9 +26,14 @@ public class ConvSet : UnitySingleton<ConvSet>
     }
     public void UpdateCurrConv()
     {
+        //检测对话是否结束，如果结束则重置链表和计数器，未结束则加载新的对话文本
         if(currnum>=Conversation.Count)
         {
-            if(ChoiceSet.choiceresult != null)
+            Conversation.Clear();
+            ConvName.Clear();
+            currnum = 0;
+            //如果有抉择事件的话，更改panel状态，否则认为剧情结束，直接加载新的场景剧本
+            if(ChoiceSet.choiceresult.Count != 0)
             {
                 ConvSet.Instance().paneltype = PanelType.ReadyToChoice;
             }

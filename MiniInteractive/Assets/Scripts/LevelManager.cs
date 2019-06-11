@@ -31,7 +31,7 @@ public class LevelManager : UnitySingleton<LevelManager>
         }
     }
     /// <summary>
-    /// 根据获取场景对话文本
+    /// 根据id获取对应的json代码块，初始化场景和对话文本
     /// </summary>
     /// <param name="nums"></param>
     public void GetConversation(string nums)
