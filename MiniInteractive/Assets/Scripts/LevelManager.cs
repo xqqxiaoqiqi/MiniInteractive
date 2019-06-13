@@ -12,7 +12,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     private JsonData cardsJsonData;
     public string nextscene;
     public bool needstop = false;
-    private string stopnum;
+    //private string stopnum;
     private Dictionary<string, JsonData> Data = new Dictionary<string, JsonData>();
     void Awake()
     {
@@ -58,7 +58,6 @@ public class LevelManager : UnitySingleton<LevelManager>
         if(Data[nums].ContainsKey("Stop"))
         {
             needstop = true;
-            stopnum = nums;
         }
     }
     /// <summary>
@@ -76,15 +75,17 @@ public class LevelManager : UnitySingleton<LevelManager>
             ChoiceSet.choiceresult.Add(details.Last());
         }
     }
-    public void StopProcess()
-    {
-        switch(stopnum)
-        {
-            case "0_4":
 
-                break;
-            default:
-                break;
-        }
+    public static void ShowPanel( GameObject thispanel)
+    {
+        thispanel.GetComponent<CanvasGroup>().alpha = 1;
+        thispanel.GetComponent<CanvasGroup>().interactable = true;
+        thispanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+    public static void HidePanel(GameObject thispanel)
+    {
+        thispanel.GetComponent<CanvasGroup>().alpha = 0;
+        thispanel.GetComponent<CanvasGroup>().interactable = false;
+        thispanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ChoiceSet : UnitySingleton<ChoiceSet>
 {
-    private string ChoicePanelPath = "GamePrefabs/ChoicePanel";
     private GameObject choicepanel;
     public static List<string> choicestext = new List<string>();
     public static List<string> choiceresult = new List<string>();
@@ -16,16 +15,12 @@ public class ChoiceSet : UnitySingleton<ChoiceSet>
     public void ShowChoicePanel()
     {
         choicepanel.GetComponent<ChoicePanel>().UpDateChoicePanel();
-        choicepanel.GetComponent<CanvasGroup>().alpha = 1;
-        choicepanel.GetComponent<CanvasGroup>().interactable = true;
-        choicepanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        LevelManager.ShowPanel(choicepanel);
 
     }
     public void HideChoicePanel()
     {
-        choicepanel.GetComponent<CanvasGroup>().alpha = 0;
-        choicepanel.GetComponent<CanvasGroup>().interactable = false;
-        choicepanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        LevelManager.HidePanel(choicepanel);
         choicestext.Clear();
         choiceresult.Clear();
         ConvSet.Instance().paneltype = PanelType.Showing;

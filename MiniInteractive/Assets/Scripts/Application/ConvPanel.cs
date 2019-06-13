@@ -10,7 +10,6 @@ public class ConvPanel : MonoBehaviour
     private Text nametext;
     public float charsPerSecond = 0.2f;
     private float timer;
-    private int currentPos = 0;
     void Awake()
     {
         convbutton = GetComponent<Button>();
@@ -26,7 +25,7 @@ public class ConvPanel : MonoBehaviour
     {
         convbutton.onClick.AddListener(PanelOnclick);
     }
-    private void PanelOnclick()
+    public void PanelOnclick()
     {
         switch (ConvSet.Instance().paneltype)
         {
@@ -58,18 +57,18 @@ public class ConvPanel : MonoBehaviour
                     timer += Time.deltaTime;
                     if (timer >= charsPerSecond)
                     {
-                        currentPos++;
-                        convtext.text = ConvSet.Instance().currconv.Substring(0, currentPos);
-                        if(currentPos>= ConvSet.Instance().currconv.Length)
+                        ConvSet.currentPos++;
+                        convtext.text = ConvSet.Instance().currconv.Substring(0, ConvSet.currentPos);
+                        if(ConvSet.currentPos >= ConvSet.Instance().currconv.Length)
                         {
-                            ShowOverProcess();
+                            ConvSet.Instance().ShowOverProcess();
                         }
                     }
                 }
                 break;
             case PanelType.RequestStop:
                 convtext.text = ConvSet.Instance().currconv;
-                ShowOverProcess();
+                ConvSet.Instance().ShowOverProcess();
                 break;
             default:
                 break;
@@ -77,10 +76,5 @@ public class ConvPanel : MonoBehaviour
         }
 
     }
-    private void ShowOverProcess()
-    {
-        currentPos = 0;
-        ConvSet.Instance().paneltype = PanelType.Stop;
-        ConvSet.Instance().UpdateCurrConv();
-    }
+
 }

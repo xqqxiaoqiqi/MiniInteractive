@@ -20,6 +20,12 @@ public class ConvSet : UnitySingleton<ConvSet>
     public string currconv;
     public string currname;
     private int currnum = 0;
+    public GameObject ConvPanel;
+    public static int currentPos = 0;
+    private void Awake()
+    {
+        ConvPanel = GameObject.Find("ConversationPanel");
+    }
     public void GetConvList(string line)
     {
         ConvName.Add(line.Split(':').First());
@@ -28,25 +34,26 @@ public class ConvSet : UnitySingleton<ConvSet>
     public void UpdateCurrConv()
     {
         //检测对话是否结束，如果结束则重置链表和计数器，未结束则加载新的对话文本
-        if(currnum>=Conversation.Count)
+        if (currnum >= Conversation.Count)
         {
             Conversation.Clear();
             ConvName.Clear();
             currnum = 0;
             //如果有抉择事件的话，更改panel状态，否则认为剧情结束，直接加载新的场景剧本
-            if(ChoiceSet.choiceresult.Count != 0)
+            if (ChoiceSet.choiceresult.Count != 0)
             {
                 ConvSet.Instance().paneltype = PanelType.ReadyToChoice;
             }
             else
             {
-                if(LevelManager.Instance().needstop==false)
+                if (LevelManager.Instance().needstop == false)
                 {
                     LevelManager.Instance().GetConversation(LevelManager.Instance().nextscene);
                 }
                 else
                 {
-                    LevelManager.Instance().StopProcess();
+                    Debug.Log("Now request the game stop");
+                    StopProcess();
                 }
             }
         }
@@ -58,5 +65,18 @@ public class ConvSet : UnitySingleton<ConvSet>
             ConvSet.Instance().paneltype = PanelType.Ready;
         }
 
+    }
+    public void ShowOverProcess()
+    {
+        currentPos = 0;
+        paneltype = PanelType.Stop;
+        UpdateCurrConv();
+    }
+    public void StopProcess()
+    {
+        Debug.Log("Do StopPrpcess");
+        LevelManager.HidePanel(ConvPanel);
+        CountinueSet.Instance().ShowCountinuePanel();
+        //显示continue按钮
     }
 }
