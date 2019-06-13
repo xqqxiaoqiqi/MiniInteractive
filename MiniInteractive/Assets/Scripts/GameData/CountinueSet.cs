@@ -15,7 +15,7 @@ public class CountinueSet : UnitySingleton<CountinueSet>
     }
     public void HideCountinuePanel()
     {
-        LevelManager.ShowPanel(CountinuePanel);
+        LevelManager.HidePanel(CountinuePanel);
     }
 
 }

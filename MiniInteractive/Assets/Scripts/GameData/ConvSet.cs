@@ -10,7 +10,8 @@ public enum PanelType
     RequestStop,
     Stop,
     ReadyToChoice,
-    Hide
+    NeedHide,
+    Hiding
 }
 public class ConvSet : UnitySingleton<ConvSet>
 {
@@ -46,15 +47,15 @@ public class ConvSet : UnitySingleton<ConvSet>
             }
             else
             {
-                if (LevelManager.Instance().needstop == false)
+                if (LevelManager.Instance().needstop == true)
                 {
-                    LevelManager.Instance().GetConversation(LevelManager.Instance().nextscene);
+                    paneltype = PanelType.NeedHide;
                 }
                 else
                 {
-                    Debug.Log("Now request the game stop");
-                    StopProcess();
+                    LevelManager.Instance().GetConversation(LevelManager.Instance().nextscene);
                 }
+
             }
         }
         else
@@ -78,5 +79,11 @@ public class ConvSet : UnitySingleton<ConvSet>
         LevelManager.HidePanel(ConvPanel);
         CountinueSet.Instance().ShowCountinuePanel();
         //显示continue按钮
+    }
+    public void CountinueProcess()
+    {
+        LevelManager.ShowPanel(ConvPanel);
+        CountinueSet.Instance().HideCountinuePanel();
+        LevelManager.Instance().GetConversation(LevelManager.Instance().nextscene);
     }
 }

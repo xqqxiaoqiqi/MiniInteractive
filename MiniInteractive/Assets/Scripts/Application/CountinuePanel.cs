@@ -13,7 +13,7 @@ public class CountinuePanel : MonoBehaviour
     }
     private void Onclick()
     {
-        CountinueSet.Instance().HideCountinuePanel();
+        ConvSet.Instance().CountinueProcess();
         ConvSet.Instance().ConvPanel.GetComponent<ConvPanel>().PanelOnclick();
     }
 }

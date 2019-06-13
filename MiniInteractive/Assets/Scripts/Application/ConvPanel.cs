@@ -38,8 +38,9 @@ public class ConvPanel : MonoBehaviour
             case PanelType.ReadyToChoice:
                 ChoiceSet.Instance().ShowChoicePanel();
                 break;
-            case PanelType.Hide:
-                Debug.Log("error!");
+            case PanelType.NeedHide:
+                ConvSet.Instance(). StopProcess();
+                ConvSet.Instance().paneltype = PanelType.Ready;
                 break;
             default:
                 break;
