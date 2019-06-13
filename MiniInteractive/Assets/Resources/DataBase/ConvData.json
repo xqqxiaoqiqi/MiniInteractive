@@ -1,12 +1,12 @@
 [
     {
         "ID": "0_1",
-        "Background":"这里写上该场景的 图片名字，建议直接和对应图片文件名相同",
+        "Background":"Gate",
         "Conversation": "
 		Ash:...！！
 		Ash:我刚才是睡着了吗...
 		???:守门人，你终于醒了。
-		Ash:啊，Vilmaris，早上好……！！
+		Ash%Play-shock:啊，Vilmaris，早上好……！！
 		Ash:这不已经是7：15分了吗！
 		Ash:距离开始工作的时间已经超出15分钟了，你为什么不早点叫我起来?
 		Vilmaris@usual:无所谓吧，反正现在暂时也还没有人想要路过这扇门。
@@ -15,7 +15,8 @@
 		Vilmaris@usual:是啊，你还是第一次担任“守门人”这个职位吧？
 		//如果播放此句对话同时添加物品的话，就像这个格式去写：【*Add】或【Remove】+【-物品名称】，音效同理，比如可以是【%Play】+[音频名称]这样。
 		//这一长串一定要按照这个顺序写：名字 表情 增删物品 音频播放，顺序颠倒会出bug
-		Vilmaris@usual*Add-book%Play-Forexample:守门人的职责，你已经清楚了吗？
+		//Vilmaris@usual*Add-book%Play-Forexample
+		Vilmaris@usual%Play-hint:守门人的职责，你已经清楚了吗？
 		",	
         "Choice": 
 		"是的=0_2
@@ -64,7 +65,8 @@
 		Ash:那...窃取能源的人最终会被怎样处置呢？
 		Cedron@usual:谁知道。我只是想要做好自己的工作而已。
 		Cedron@usual:不过，若是事情大到要让警卫队的管理者率领创痕出动的话，恐怕他们也是凶多吉少了。
-		Cedron@sign:比起纠结这种事，快点让我通过吧。接下来，我还有一堆能源报表要写呢...
+		Cedron@sign:比起纠结这种事，快点让我通过吧。
+		Cedron@sign*Add-Card_Cedron:这是我的身份令牌。接下来，我还有一堆能源报表要写呢...
 		Ash:好、好的...
 		Ash:（Cedron是RE的工作人员，她持有的应该是身份令牌。我只要确认好证件没什么错误就可以放她进去了。）
 		",
@@ -76,7 +78,8 @@
         "ID": "1_2",
         "Conversation":"
 		？？？:...Ash？
-		Ash:信息已经核实完毕。祝你通行愉快。
+		Ash%Play-iron_gate:信息已经核实完毕。
+		Ash*Remove-Card_Cedron:这是你的卡片。祝你通行愉快。
 		Cedron@sign:“祝你通行愉快”...我倒是真的希望我能够通行愉快。
 		Ash:你还是一如既往的悲观啊。
 		Cedron@usual:在这个城市里就根本没什么人能有好日子过，你也是知道的。
@@ -116,7 +119,8 @@
 		Vilmaris@usual:关于原来的守门人去哪里了的问题……我想你不会想知道这个问题的答案的。
 		Ash:（她说就在刚才……可脚步声也太轻了吧，我完全没有注意到她已经走到这边来了。）
 		???:我懂了，是不能多问的问题吧。
-		Douglas@smile:我的名字是Douglas，T基金会的一个下层研究员。这是我的证件。
+		Douglas@smile:我的名字是Douglas，T基金会的一个下层研究员。
+		Douglas@smile*Add-Card_Douglas:这是我的证件。
 		Ash:（曾经的守门人发生了什么，真的好在意……）
 		Ash:（但是，现在很明显不是问这个问题的氛围。总之还是专心检查证件是否有误吧。）
 		",
@@ -127,7 +131,7 @@
     {
         "ID": "2_2",
         "Conversation":"
-		Ash:证件已经核实完毕，祝您通行愉快。
+		Ash%Play-iron_gate*Remove-Card_Douglas:证件已经核实完毕，祝您通行愉快。
 		",
 		"Next":"2_4"
     },
@@ -137,7 +141,7 @@
 		Douglas@talk:你是不是搞错了什么...我的确是城区的人，我想我的证件是没有问题的。
 		Ash:（不，这个人...我记得，我好像在今天的通知上看到过。）
 		Ash:（就算证件是合格的，也不代表当局就允许他进入了。）
-		Ash:抱歉，你的信息在今日公示的“通缉者名单”里。我不能让你进入。
+		Ash*Remove-Card_Douglas:抱歉，你的信息在今日公示的“通缉者名单”里。我不能让你进入。
 		",
 		"Next":"2_4"
     },
@@ -146,7 +150,7 @@
         "Conversation":"
 		Douglas@usual:...新来的守门人，您的名字是？
 		 Ash:...？Ash。
-		Douglas@usual:...
+		Douglas@usual*Add-BiP_Paper:...请收下这个。
 		Ash:欸？
 		Douglas@smile:期待着您的答复。
 		Ash:...
@@ -167,6 +171,7 @@
     },
 	{
         "ID": "2_5",
+		"Background":"Border",
         "Conversation":"
 		Ash:我们真的要这样在边缘地区大摇大摆地溜达吗？
 		Vilmaris@talk:怎么，你不相信我作为警卫的实力吗？
@@ -204,7 +209,7 @@
         "ID": "3_1",
         "Conversation":"
 		Ash:好像有点清闲啊，没什么人路过的样子...
-		Nimshi@talk:...
+		Nimshi@talk*Add-Card_Nimshi:...
 		Ash:...请问，你是城区的人吗？
 		Nimshi@usual:...嗯。
 		Ash:（不，这副打扮不管怎么看也是边缘地区的孩子...）
@@ -225,6 +230,7 @@
 	{
         "ID": "3_2",
         "Conversation":"
+		Ash*Remove-Card_Nimshi:那么，你先拿好这个...
 		Vilmaris@usual:喂，你打算做什么？
 		Ash:呃...你什么时候过来的？！
 		Vilmaris@usual:就在刚才啊。
@@ -235,7 +241,8 @@
 		Vilmaris@sad:而且，这样的孩子在边缘地区可有不少呢，下次再遇见这种情况，下下下次...你都要这么做吗？
 		Ash:...
 		Vilmaris@sad:不要随处散发自己的同情心了，这对你没什么好处。
-		Ash:啊。他跑掉了。
+		Nimshi@sad:...
+		Ash%Play-walk:啊。他跑掉了。
 		Ash:喂，我说，你不要当着小孩子的面说这种话啊...
 		Villmaris@usual:我这是为了你着想。尽快回到自己的工作岗位去吧。
 		Ash:什、什么嘛，那家伙...
@@ -245,7 +252,7 @@
 	{
         "ID": "3_3",
         "Conversation":"
-		Ash:抱歉...守门人是我的工作。由于我的工作职责，我不能让你进入城区。
+		Ash*Remove-Card_Nimshi:抱歉...守门人是我的工作。由于我的工作职责，我不能让你进入城区。
 		Nimshi@talk:工作...？
 		Ash:嗯，我的工作就是看守这里的大门，让持有合格通行证件的人通过。抱歉，你的证件……
 		Nimshi@talk:如果大哥哥放我进去的话，会丢掉这份工作吗？
