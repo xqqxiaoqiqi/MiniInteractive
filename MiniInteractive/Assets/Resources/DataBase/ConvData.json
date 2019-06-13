@@ -5,7 +5,7 @@
         "Conversation": "
 		Ash:...！！
 		Ash:我刚才是睡着了吗...
-		???:守门人，你终于醒了。
+		N_Vilmaris@usual:守门人，你终于醒了。
 		Ash%Play-shock:啊，Vilmaris，早上好……！！
 		Ash:这不已经是7：15分了吗！
 		Ash:距离开始工作的时间已经超出15分钟了，你为什么不早点叫我起来?
@@ -46,7 +46,7 @@
     {
         "ID": "1_1",
         "Conversation":"
-		？？？@shock:...Ash？
+		N_Cedron@shock:...Ash？
 		Ash:这...这不是Cedron吗！没想到上班第一天就能碰到熟人。
 		Ash:你不是在RE的能源总部负责调查工作的吗？
 		Cedron@smile:Ash，好久不见！想不到你最终被分配到了守门人的工作啊。
@@ -74,7 +74,6 @@
     {
         "ID": "1_2",
         "Conversation":"
-		？？？:...Ash？
 		Ash%Play-iron_gate:信息已经核实完毕。
 		Ash*Remove-Card_Cedron:这是你的卡片。祝你通行愉快。
 		Cedron@sign:“祝你通行愉快”...我倒是真的希望我能够通行愉快。
@@ -108,14 +107,14 @@
     {
         "ID": "2_1",
         "Conversation":"
-		???@talk:...？是新的守门人？
+		N_Douglas@talk:...？是新的守门人？
 		原来的守门人去哪里了，是离职了吗？
 		Vilmaris@usual:不，我想通常情况下没有人会傻到放弃这样一份清闲而有足够报酬的工作的。
 		Ash:哇、你，你什么时候出现的？
 		Vilmaris@smile:就在刚才啊。你在发什么呆呢？
 		Vilmaris@usual:关于原来的守门人去哪里了的问题……我想你不会想知道这个问题的答案的。
 		Ash:（她说就在刚才……可脚步声也太轻了吧，我完全没有注意到她已经走到这边来了。）
-		???:我懂了，是不能多问的问题吧。
+		N_Douglas@usual:我懂了，是不能多问的问题吧。
 		Douglas@smile:我的名字是Douglas，T基金会的一个下层研究员。
 		Douglas@smile*Add-Card_Douglas:这是我的证件。
 		Ash:（曾经的守门人发生了什么，真的好在意……）
