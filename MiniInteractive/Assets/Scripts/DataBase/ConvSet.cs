@@ -107,13 +107,20 @@ public class ConvSet : UnitySingleton<ConvSet>
         string[] s = name.Split('@');
         if(s.Length!=1)
         {
-            nextexpression = s.First()+"_"+s.Last();
+            nextexpression = s.First().Replace("N_","")+"_"+s.Last();
         }
         else
         {
             nextexpression = null;
         }
-        return s.First();
+        if(s.First().Contains("N_"))
+        {
+            return "???";
+        }
+        else
+        {
+            return s.First();
+        }
     }
     public void UpdateExpress()
     {
@@ -130,7 +137,32 @@ public class ConvSet : UnitySingleton<ConvSet>
             }
             if (nexttool != null)
             {
-                //增删道具
+                string[] t = nexttool.Split('-');
+                switch(t.First())
+                {
+                    case "Add":
+                        if (t.Last().Contains("Card_"))
+                        {
+                            ToolSet.Instance().AddCard(t.Last());
+                        }
+                        else
+                        {
+                            ToolSet.Instance().AddTool(t.Last());
+                        }
+                        break;
+                    case "Remove":
+                        if (t.Last().Contains("Card_"))
+                        {
+                            ToolSet.Instance().RemoveCard();
+                        }
+                        else
+                        {
+                            ToolSet.Instance().RemoveTool(t.Last());
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
 
         }

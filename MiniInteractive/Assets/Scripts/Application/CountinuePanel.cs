@@ -9,9 +9,9 @@ public class CountinuePanel : MonoBehaviour
     private void Awake()
     {
         countinuebutton = gameObject.GetComponentInChildren<Button>();
-        countinuebutton.onClick.AddListener(Onclick);
+        countinuebutton.onClick.AddListener(OnClick);
     }
-    private void Onclick()
+    private void OnClick()
     {
         ConvSet.Instance().CountinueProcess();
         ConvSet.Instance().ConvPanel.GetComponent<ConvPanel>().PanelOnclick();

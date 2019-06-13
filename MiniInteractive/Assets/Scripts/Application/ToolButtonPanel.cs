@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BustSet : MonoBehaviour
+public class ToolButtonPanel : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

@@ -37,6 +37,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     /// <param name="nums"></param>
     public void GetGameFlow(string nums)
     {
+        needstop = false;
         GameData.BeZero();
         System.StringSplitOptions option = System.StringSplitOptions.RemoveEmptyEntries;
         string[] lines = Data[nums]["Conversation"].ToString().Split(new char[] { '\r', '\n','\t',' ' }, option);
