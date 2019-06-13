@@ -207,6 +207,7 @@
     },
     {
         "ID": "3_1",
+		"Background":"Gate",
         "Conversation":"
 		Ash:好像有点清闲啊，没什么人路过的样子...
 		Nimshi@talk*Add-Card_Nimshi:...
