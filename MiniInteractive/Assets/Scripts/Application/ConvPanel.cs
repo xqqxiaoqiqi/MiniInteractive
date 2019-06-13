@@ -52,6 +52,7 @@ public class ConvPanel : MonoBehaviour
         switch(ConvSet.Instance().paneltype)
         {
             case PanelType.Showing:
+                ConvSet.Instance().UpdateExpress();
                 nametext.text = ConvSet.Instance().currname;
                 if (ConvSet.Instance().paneltype == PanelType.Showing)
                 {

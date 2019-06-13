@@ -15,11 +15,11 @@ public class ChoicePanel : MonoBehaviour
                 Button button = b[i];
                 if (!buttonlist.ContainsKey(button))
                 {
-                    buttonlist.Add(button, ChoiceSet.choiceresult[i]);
+                    buttonlist.Add(button, GameData.choiceresult[i]);
                 }
-                if (ChoiceSet.choicestext.Count - 1 >= i)
+                if (GameData.choicestext.Count - 1 >= i)
                 {
-                    button.GetComponentInChildren<Text>().text = ChoiceSet.choicestext[i];
+                    button.GetComponentInChildren<Text>().text = GameData.choicestext[i];
                 }
             }
     }

@@ -12,7 +12,6 @@ public class LevelManager : UnitySingleton<LevelManager>
     private JsonData cardsJsonData;
     public string nextscene;
     public bool needstop = false;
-    //private string stopnum;
     private Dictionary<string, JsonData> Data = new Dictionary<string, JsonData>();
     void Awake()
     {
@@ -23,7 +22,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     private void Start()
     {
         InstalizeAllData();
-        GetConversation("0_1");
+        GetGameFlow("0_1");
     }
     private void InstalizeAllData()
     {
@@ -36,14 +35,15 @@ public class LevelManager : UnitySingleton<LevelManager>
     /// 根据id获取对应的json代码块，初始化场景和对话文本
     /// </summary>
     /// <param name="nums"></param>
-    public void GetConversation(string nums)
+    public void GetGameFlow(string nums)
     {
+        GameData.BeZero();
         System.StringSplitOptions option = System.StringSplitOptions.RemoveEmptyEntries;
         string[] lines = Data[nums]["Conversation"].ToString().Split(new char[] { '\r', '\n','\t',' ' }, option);
         for (int i=0; i<lines.Length;i++)
         {
             Debug.Log(lines[i]);
-            ConvSet.Instance().GetConvList(lines[i]);
+            GameData.ProcessConversation(lines[i],i);
         }
         ConvSet.Instance().UpdateCurrConv();
         if(Data[nums].ContainsKey("Choice"))
@@ -71,8 +71,8 @@ public class LevelManager : UnitySingleton<LevelManager>
         for(int i=0;i<choices.Length;i++)
         {
             string[] details = choices[i].Split('=');
-            ChoiceSet.choicestext.Add(details.First());
-            ChoiceSet.choiceresult.Add(details.Last());
+            GameData.choicestext.Add(details.First());
+            GameData.choiceresult.Add(details.Last());
         }
     }
 

@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class ChoiceSet : UnitySingleton<ChoiceSet>
 {
     private GameObject choicepanel;
-    public static List<string> choicestext = new List<string>();
-    public static List<string> choiceresult = new List<string>();
     private void Awake()
     {
         choicepanel = GameObject.Find("ChoicePanel");
@@ -21,8 +19,8 @@ public class ChoiceSet : UnitySingleton<ChoiceSet>
     public void HideChoicePanel()
     {
         LevelManager.HidePanel(choicepanel);
-        choicestext.Clear();
-        choiceresult.Clear();
+        GameData.choicestext.Clear();
+        GameData.choiceresult.Clear();
         ConvSet.Instance().paneltype = PanelType.Showing;
     }
 
