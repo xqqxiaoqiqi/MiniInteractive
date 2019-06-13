@@ -30,6 +30,10 @@ public class ConvPanel : MonoBehaviour
         switch (ConvSet.Instance().paneltype)
         {
             case PanelType.Ready:
+                if(LevelManager.nextground!=null)
+                {
+                    LevelManager.Instance().UpdateGround();
+                }
                 ConvSet.Instance().paneltype = PanelType.Showing;
                 break;
             case PanelType.Showing:

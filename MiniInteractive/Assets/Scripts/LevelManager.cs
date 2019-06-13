@@ -9,9 +9,12 @@ public class LevelManager : UnitySingleton<LevelManager>
 {
     private TextAsset ConvAsset;
     private static string ConvPackage = "DataBase/ConvData";
+    private string BackgroundPath = "img/backgrounds/";
+    public Image background;
     private JsonData cardsJsonData;
     public string nextscene;
     public bool needstop = false;
+    public static string nextground;
     private Dictionary<string, JsonData> Data = new Dictionary<string, JsonData>();
     void Awake()
     {
@@ -38,6 +41,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     public void GetGameFlow(string nums)
     {
         needstop = false;
+        nextground = null;
         GameData.BeZero();
         System.StringSplitOptions option = System.StringSplitOptions.RemoveEmptyEntries;
         string[] lines = Data[nums]["Conversation"].ToString().Split(new char[] { '\r', '\n','\t',' ' }, option);
@@ -60,6 +64,11 @@ public class LevelManager : UnitySingleton<LevelManager>
         {
             needstop = true;
         }
+        if(Data[nums].ContainsKey("Background"))
+        {
+            nextground = Data[nums]["Background"].ToString();
+
+        }
     }
     /// <summary>
     /// 设置场景选项文本
@@ -76,7 +85,10 @@ public class LevelManager : UnitySingleton<LevelManager>
             GameData.choiceresult.Add(details.Last());
         }
     }
-
+    public void UpdateGround()
+    {
+        background.sprite = (Sprite)Resources.Load(BackgroundPath + nextground, typeof(Sprite));
+    }
     public static void ShowPanel( GameObject thispanel)
     {
         thispanel.GetComponent<CanvasGroup>().alpha = 1;
