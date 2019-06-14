@@ -18,6 +18,7 @@ public class ChoiceButton : MonoBehaviour
     {
         if (ChoicePanel.buttonlist.ContainsKey(thisbutton))
         {
+            AudioSet.Instance().PlayButton("click");
             LevelManager.Instance().GetGameFlow(ChoicePanel.buttonlist[thisbutton]);
         }
         ChoiceSet.Instance().HideChoicePanel();

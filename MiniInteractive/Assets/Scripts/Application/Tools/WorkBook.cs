@@ -20,7 +20,8 @@ public class WorkBook : MonoBehaviour
     }
     void TurnLeft()
     {
-        if(pagelist[pagenum-1]!=null)
+        AudioSet.Instance().PlayButton("click");
+        if (pagelist[pagenum-1]!=null)
         {
             GetComponent<Image>().sprite = pagelist[pagenum-1];
             pagenum--;
@@ -29,6 +30,7 @@ public class WorkBook : MonoBehaviour
     }
     void TurnRight()
     {
+        AudioSet.Instance().PlayButton("click");
         if (pagelist[pagenum + 1] != null)
         {
             GetComponent<Image>().sprite = pagelist[pagenum + 1];

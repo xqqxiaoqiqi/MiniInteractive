@@ -12,6 +12,7 @@ public class ToolButton : MonoBehaviour
     }
     private void OnClick()
     {
+        AudioSet.Instance().PlayButton("click");
         ToolSet.Instance().ShowDetail(gameObject.name.Replace("Button",""));
     }
 

@@ -13,6 +13,7 @@ public class CountinuePanel : MonoBehaviour
     }
     private void OnClick()
     {
+        AudioSet.Instance().PlayButton("click");
         ConvSet.Instance().CountinueProcess();
         ConvSet.Instance().ConvPanel.GetComponent<ConvPanel>().PanelOnclick();
     }

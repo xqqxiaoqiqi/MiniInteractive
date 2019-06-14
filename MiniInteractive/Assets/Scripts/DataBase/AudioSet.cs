@@ -8,10 +8,12 @@ public class AudioSet : UnitySingleton<AudioSet>
     private string bgmpath = "audio/BGM/";
     private AudioSource sesource;
     private AudioSource bgmsource;
+    private AudioSource buttonsource;
     private void Awake()
     {
         sesource = GameObject.Find("SE").GetComponent<AudioSource>();
         bgmsource = GameObject.Find("BGM").GetComponent<AudioSource>();
+        buttonsource = GameObject.Find("ButtonSource").GetComponent<AudioSource>();
     }
     public void PlaySE(string name)
     {
@@ -27,4 +29,12 @@ public class AudioSet : UnitySingleton<AudioSet>
         bgmsource.Play();
         Debug.Log("Play" + name);
     }
+    public void PlayButton(string name)
+    {
+        name = name.Replace("Play-", "");
+        buttonsource.clip = (AudioClip)Resources.Load(sepath + name, typeof(AudioClip));
+        buttonsource.Play();
+        Debug.Log("Play" + name);
+    }
+
 }

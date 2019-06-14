@@ -45,6 +45,7 @@ public class ToolSet : UnitySingleton<ToolSet>
     }
     public void HideDetail()
     {
+        AudioSet.Instance().PlayButton("click_2");
         Destroy(showing);
         LevelManager.HidePanel(tooldetailpanel);
     }
@@ -56,6 +57,7 @@ public class ToolSet : UnitySingleton<ToolSet>
     }
     public void ShowCard()
     {
+        AudioSet.Instance().PlayButton("click");
         showing = (GameObject)Instantiate(Resources.Load(toolpath + "Card", typeof(GameObject)));
         showing.GetComponentInChildren<Image>().sprite = (Sprite)Resources.Load(cardpath + cardname,typeof(Sprite));
         showing.GetComponent<RectTransform>().SetParent(tooldetailpanel.transform, false);

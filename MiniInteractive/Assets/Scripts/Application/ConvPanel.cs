@@ -27,6 +27,7 @@ public class ConvPanel : MonoBehaviour
     }
     public void PanelOnclick()
     {
+        AudioSet.Instance().PlayButton("click");
         switch (ConvSet.Instance().paneltype)
         {
             case PanelType.Ready:
