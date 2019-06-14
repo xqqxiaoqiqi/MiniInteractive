@@ -2,6 +2,7 @@
     {
         "ID": "0_1",
         "Background":"Gate",
+		"BGM":"work",
         "Conversation": "
 		Ash:...！！
 		Ash:我刚才是睡着了吗...
@@ -168,6 +169,7 @@
 	{
         "ID": "2_5",
 		"Background":"Border",
+		"BGM":"border",
         "Conversation":"
 		Ash:我们真的要这样在边缘地区大摇大摆地溜达吗？
 		Vilmaris@talk:怎么，你不相信我作为警卫的实力吗？
@@ -204,6 +206,7 @@
     {
         "ID": "3_1",
 		"Background":"Gate",
+		"BGM":"work",
         "Conversation":"
 		Ash:好像有点清闲啊，没什么人路过的样子...
 		Nimshi@talk*Add-Card_Nimshi:...
