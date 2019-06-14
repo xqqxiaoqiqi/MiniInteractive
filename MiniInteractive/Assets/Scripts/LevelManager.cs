@@ -15,6 +15,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     public string nextscene;
     public bool needstop = false;
     public static string nextground;
+    public static string nextbgm;
     private Dictionary<string, JsonData> Data = new Dictionary<string, JsonData>();
     void Awake()
     {
@@ -41,6 +42,7 @@ public class LevelManager : UnitySingleton<LevelManager>
     public void GetGameFlow(string nums)
     {
         needstop = false;
+        nextbgm = null;
         nextground = null;
         GameData.BeZero();
         System.StringSplitOptions option = System.StringSplitOptions.RemoveEmptyEntries;
@@ -67,7 +69,10 @@ public class LevelManager : UnitySingleton<LevelManager>
         if(Data[nums].ContainsKey("Background"))
         {
             nextground = Data[nums]["Background"].ToString();
-
+        }
+        if(Data[nums].ContainsKey("BGM"))
+        {
+            nextbgm = Data[nums]["BGM"].ToString();
         }
     }
     /// <summary>

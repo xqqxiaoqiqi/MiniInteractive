@@ -94,7 +94,6 @@ public class ConvSet : UnitySingleton<ConvSet>
         Debug.Log("Do StopPrpcess");
         LevelManager.HidePanel(ConvPanel);
         CountinueSet.Instance().ShowCountinuePanel();
-        //显示continue按钮
     }
     public void CountinueProcess()
     {

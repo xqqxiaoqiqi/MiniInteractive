@@ -33,6 +33,12 @@ public class ConvPanel : MonoBehaviour
                 if(LevelManager.nextground!=null)
                 {
                     LevelManager.Instance().UpdateGround();
+                    LevelManager.nextground = null;
+                }
+                if(LevelManager.nextbgm!=null)
+                {
+                    AudioSet.Instance().PlayBGM(LevelManager.nextbgm);
+                    LevelManager.nextbgm = null;
                 }
                 ConvSet.Instance().paneltype = PanelType.Showing;
                 break;
