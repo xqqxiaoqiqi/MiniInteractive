@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2340,7 +2340,7 @@ PrefabInstance:
     - target: {fileID: 2125879209408378935, guid: d6199a5a5c97d1d419bb18f21932a9c8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2125879209408378935, guid: d6199a5a5c97d1d419bb18f21932a9c8,
         type: 3}
@@ -2437,6 +2437,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2125879210808284704, guid: d6199a5a5c97d1d419bb18f21932a9c8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125879210808284704, guid: d6199a5a5c97d1d419bb18f21932a9c8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125879210808284704, guid: d6199a5a5c97d1d419bb18f21932a9c8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2125879209408378934, guid: d6199a5a5c97d1d419bb18f21932a9c8,
         type: 3}
       propertyPath: m_Color.r
@@ -2456,6 +2471,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125879209884539889, guid: d6199a5a5c97d1d419bb18f21932a9c8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125879209884539889, guid: d6199a5a5c97d1d419bb18f21932a9c8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125879209884539889, guid: d6199a5a5c97d1d419bb18f21932a9c8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2125879209126343699, guid: d6199a5a5c97d1d419bb18f21932a9c8,
         type: 3}
@@ -2523,36 +2553,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 2125879210808284704, guid: d6199a5a5c97d1d419bb18f21932a9c8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2125879210808284704, guid: d6199a5a5c97d1d419bb18f21932a9c8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2125879210808284704, guid: d6199a5a5c97d1d419bb18f21932a9c8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2125879209884539889, guid: d6199a5a5c97d1d419bb18f21932a9c8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2125879209884539889, guid: d6199a5a5c97d1d419bb18f21932a9c8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2125879209884539889, guid: d6199a5a5c97d1d419bb18f21932a9c8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6199a5a5c97d1d419bb18f21932a9c8, type: 3}
@@ -3137,8 +3137,8 @@ RectTransform:
   m_Children:
   - {fileID: 514600928}
   - {fileID: 6527326909430528314}
-  - {fileID: 1674578656}
   - {fileID: 1906340434}
+  - {fileID: 1674578656}
   - {fileID: 855594612}
   - {fileID: 1153670581}
   - {fileID: 373387150}
@@ -3234,7 +3234,7 @@ RectTransform:
   - {fileID: 167831983}
   - {fileID: 1180150782}
   m_Father: {fileID: 1792345407}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
