@@ -15,6 +15,7 @@ public class AudioSet : UnitySingleton<AudioSet>
     }
     public void PlaySE(string name)
     {
+        name = name.Replace("Play-", "");
         sesource.clip = (AudioClip)Resources.Load(sepath + name, typeof(AudioClip));
         sesource.Play();
         Debug.Log("Play" + name);

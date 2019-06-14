@@ -37,8 +37,9 @@ public class ToolSet : UnitySingleton<ToolSet>
         Destroy(toolbuttonlist[name]);
     }
     public void ShowDetail(string name)
-    { 
-        showing = (GameObject)Instantiate(Resources.Load(toolpath + name.Replace("(Clone)",""), typeof(GameObject)));
+    {
+        name = name.Replace("(Clone)", "");
+        showing = (GameObject)Instantiate(Resources.Load(toolpath + name, typeof(GameObject)));
         showing.GetComponent<RectTransform>().SetParent(tooldetailpanel.transform,false);
         LevelManager.ShowPanel(tooldetailpanel);
     }

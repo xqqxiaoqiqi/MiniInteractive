@@ -21,7 +21,6 @@ public class LevelManager : UnitySingleton<LevelManager>
     {
         ConvAsset = Resources.Load<TextAsset>(ConvPackage);
         cardsJsonData = JsonMapper.ToObject(ConvAsset.text);
-
     }
     private void Start()
     {

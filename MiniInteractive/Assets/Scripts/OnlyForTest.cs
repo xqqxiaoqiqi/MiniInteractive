@@ -9,7 +9,7 @@ public void Awake()
     {
         ConvSet.Instance().paneltype = PanelType.Ready;
     }
-private void TestShow()
+    private void TestShow()
     {
 
     }
