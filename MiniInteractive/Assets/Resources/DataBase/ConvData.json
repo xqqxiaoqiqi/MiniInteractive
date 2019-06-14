@@ -109,7 +109,7 @@
         "ID": "2_1",
         "Conversation":"
 		N_Douglas@talk:...？是新的守门人？
-		原来的守门人去哪里了，是离职了吗？
+		N_Douglas@talk:原来的守门人去哪里了，是离职了吗？
 		Vilmaris@usual:不，我想通常情况下没有人会傻到放弃这样一份清闲而有足够报酬的工作的。
 		Ash:哇、你，你什么时候出现的？
 		Vilmaris@smile:就在刚才啊。你在发什么呆呢？
@@ -146,7 +146,7 @@
         "ID": "2_4",
         "Conversation":"
 		Douglas@usual:...新来的守门人，您的名字是？
-		 Ash:...？Ash。
+		Ash:...？Ash。
 		Douglas@usual*Add-BiP_Paper:...请收下这个。
 		Ash:欸？
 		Douglas@smile:期待着您的答复。
@@ -244,7 +244,7 @@
 		Nimshi@sad:...
 		Ash%Play-walk:啊。他跑掉了。
 		Ash:喂，我说，你不要当着小孩子的面说这种话啊...
-		Villmaris@usual:我这是为了你着想。尽快回到自己的工作岗位去吧。
+		Vilmaris@usual:我这是为了你着想。尽快回到自己的工作岗位去吧。
 		Ash:什、什么嘛，那家伙...
 		",
 		"Next":"3_4"
