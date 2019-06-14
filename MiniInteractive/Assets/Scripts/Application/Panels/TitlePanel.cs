@@ -1,18 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class TitlePanel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Button startbutton;
+    private GameObject Main;
+    public ConvPanel convpanel;
+    public GameObject conv;
+    private void Awake()
     {
-        
+        startbutton = GameObject.Find("StartButton").GetComponent<Button>();
+        startbutton.onClick.AddListener(StartGame);
+        Main = GameObject.Find("MainCanva");
     }
-
-    // Update is called once per frame
-    void Update()
+    private void StartGame()
     {
-        
+        LevelManager.HidePanel(gameObject);
+        ImageSet.Instance().UpdateBustPanel("Vilmaris_usual");
+        ImageSet.Instance().UpdateBackgroundPanel("Gate");
+        LevelManager.ShowPanel(Main);
+        LevelManager.ShowPanel(conv);
+        convpanel.PanelOnclick();
     }
 }

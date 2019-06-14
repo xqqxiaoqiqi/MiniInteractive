@@ -22,7 +22,7 @@ public class ConvSet : UnitySingleton<ConvSet>
     public string nexttool;
     public string nextaudio;
     public string nextexpression;
-    private int nextnum = 0;
+    public int nextnum = 0;
     public GameObject ConvPanel;
     public static int currentPos = 0;
     private bool allowupdate = false;

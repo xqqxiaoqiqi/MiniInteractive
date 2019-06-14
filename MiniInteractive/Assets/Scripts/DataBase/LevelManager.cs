@@ -51,6 +51,7 @@ public class LevelManager : UnitySingleton<LevelManager>
             Debug.Log(lines[i]);
             GameData.ProcessConversation(lines[i],i);
         }
+        ConvSet.Instance().nextnum = 0;
         ConvSet.Instance().UpdateCurrConv();
         if(Data[nums].ContainsKey("Choice"))
         {
